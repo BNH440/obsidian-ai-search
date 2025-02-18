@@ -1,0 +1,34 @@
+services:
+  oas-tailscale:
+    image: tailscale/tailscale:latest
+    hostname: oas-tailscale
+    container_name: oas-tailscale
+    environment:
+      - TS_AUTHKEY=PUT_AUTH_KEY_HERE
+      - TS_EXTRA_ARGS=--advertise-tags=tag:container
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+    volumes:
+      - ${PWD}/oas-tailscale/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+  oas-ollama:
+    image: ollama/ollama
+    container_name: oas-ollama
+    volumes:
+      - oas-ollama:/root/.ollama
+      - /datasets/ollama:/root/.ollama/models
+    environment:
+      - OLLAMA_MODELS=/root/.ollama/models
+    depends_on:
+      - oas-tailscale
+    network_mode: service:oas-tailscale
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
