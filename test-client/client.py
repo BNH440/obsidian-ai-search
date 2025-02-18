@@ -5,7 +5,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.node_parser import TokenTextSplitter
 import asyncio
 
-DATA_DIR = "data"
+DATA_DIR = "../example-vault"
 API_URL="http://oas-tailscale:11434"
 
 # Settings control global defaults
