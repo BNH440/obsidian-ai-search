@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2ebeff1d85b8598c",
+        "id": "2f912b4866bcfba0",
         "type": "tabs",
         "children": [
           {
-            "id": "9df5f7be1da10908",
+            "id": "d376033beab3d436",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -158,10 +158,11 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "sample-plugin:Sample Plugin": false
     }
   },
-  "active": "8055eb46a8f50e8f",
+  "active": "d376033beab3d436",
   "lastOpenFiles": [
     "number.md"
   ]

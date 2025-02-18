@@ -1,2 +1,4 @@
 venv
 test-client/storage
+.DS_Store
+example-vault/.obsidian/workspace.json
